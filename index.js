@@ -7,7 +7,7 @@ function shouldTransform(filename, options) {
   exclude = 
     ((options['exclude'] == null) ||
     (typeof options['exclude'].test != 'function') || // needs regex
-    (options['exclude'].test(filename)))
+    (!options['exclude'].test(filename)))
 
   return exclude
 }
